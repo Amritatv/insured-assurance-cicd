@@ -24,4 +24,10 @@ jobs:
           cache: maven
 
       - name: Build with Maven
-        run: mvn clean package
+       run: mvn clean package
+
+      - name: Upload WAR artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: insured-assurance-war
+          path: target/insured-assurance.war
